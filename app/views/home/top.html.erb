@@ -1,0 +1,25 @@
+<!-- main -->
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+          <div id="app">
+            <vue-typer :text='["Thank you for coming today.","Welcome","It’s nice to meet you.","Thank you for your time today.","Welcome back."]' :repeat='Infinity' :shuffle='true' initial-action='typing' :pre-type-delay='70' :type-delay='70' :pre-erase-delay='2000' :erase-delay='250' erase-style='select-all' :erase-on-complete='false' caret-animation='blink'></vue-typer>
+          </div>
+
+      </div><!-- //col-12 -->
+    </div><!-- //row -->
+  </div><!-- //container -->
+</main><!-- //main -->
+
+<script>
+  const VueTyper = window.VueTyper.VueTyper
+
+  new Vue({
+    el: '#app',
+    components: {
+      'vue-typer': VueTyper
+    },
+  });
+</script>

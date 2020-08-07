@@ -1,0 +1,401 @@
+/* Base ==================== */
+@charset "utf-8";
+
+html {
+    font-size: 62.5%;
+}
+
+$ja_font: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Verdana, "ＭＳＰゴシック", sans-serif;
+$white: #f9f8f6;
+$black: #323232;
+$gray: #e0e0e0;
+$red: #ff6d77;
+$accent-1: #3d6a72;
+$accent-2: #8dafbb;
+$facebook: #405f9e;
+$twitter: #1dcaff;
+
+/* //Base ==================== */
+
+/* mixin ==================== */
+@mixin fontsize($size: 24) {
+    font-size: $size + px;
+    font-size: ($size / 10) * 1rem;
+}
+
+@mixin sp() {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin pc() {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+// 使用例
+.test-text {
+    @include sp {
+        @include fontsize(18);
+    }
+    @include pc {
+        @include fontsize(20);
+    }
+}
+/* //mixin ===================== */
+
+/* body ==================== */
+body {
+    // font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic,"Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic";
+    font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic,
+        "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic";
+    // font-family: "Noto Serif", "Noto Serif JP", serif;
+    background: $white;
+
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0 0 0;
+        padding: 0 0 0;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    h1,
+    h2,
+    h3,
+    li,
+    p,
+    a,
+    span {
+        color: transparent;
+        text-shadow: 0 0 1px $black;
+        text-decoration: none;
+        outline: none;
+    }
+
+    a {
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        } // &:hover
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* header ==================== */
+    header {
+        .navbar {
+            padding: 0;
+            z-index: 0;
+            .container {
+                padding: 30px 15px 25px;
+                width: 100%;
+                position: relative;
+                @include sp {
+                    padding: 17px 15px;
+                }
+                li,
+                a {
+                    text-decoration: none;
+                    margin: 0;
+                    text-align: center;
+                    @include fontsize(22);
+                    letter-spacing: 1px;
+                    font-weight: 700;
+                    // transition: 0.3s;
+                    &:hover {
+                        transform: scale(1.2);
+                        transition-duration: 0.3s;
+                    } // &:hover
+                    h1 {
+                        @include fontsize(24);
+                        letter-spacing: 4px;
+                        line-height: 22px;
+                        font-weight: 900;
+                        span {
+                            @include fontsize(18);
+                            letter-spacing: 2px;
+                            font-weight: 400;
+                        }
+                    }
+                } // a
+                .navbar-toggler {
+                    width: 30px;
+                    height: 30px;
+                    margin: 0;
+                    padding: 0;
+                    border: none;
+                    position: relative;
+                    outline: none;
+                }
+                .navbar-toggler-icon {
+                    background-image: none; /* この行で背景画像を無効化 */
+                    width: 30px;
+                    height: 3px;
+                    background: $black;
+                    display: block;
+                    position: absolute;
+                    transition: ease 0.5s;
+                    opacity: 0.8;
+                    &:nth-of-type(1) {
+                        top: 8px;
+                    }
+                    &:nth-of-type(2) {
+                        top: 16px;
+                    }
+                    &:nth-of-type(3) {
+                        top: 24px;
+                    }
+                }
+                .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+                    &:nth-of-type(1) {
+                        top: 14px;
+                        transform: rotate(45deg);
+                    }
+                    &:nth-of-type(2) {
+                        opacity: 0;
+                    }
+                    &:nth-of-type(3) {
+                        top: 14px;
+                        transform: rotate(-45deg);
+                    }
+                }
+
+                .collapse {
+                    margin: 16px 0 0;
+                    .navbar-nav {
+                        @include sp {
+                            margin: 5px 0 0;
+                            padding: 50px 0;
+                            // background-color: rgba(0, 0, 0, 0.6);
+                        }
+                    }
+                    li {
+                        margin: 0 20px;
+                        padding: 0;
+                        @include sp {
+                            margin: 30px;
+                        }
+                        &:nth-child(4) {
+                        }
+                    }
+                } // .collapse
+            } // .container-fluid
+        } // .nav-bar
+    } // header
+    /* //header ==================== */
+
+    /* main ==================== */
+    main {
+        .page-title {
+            margin: 55px 0;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        p {
+            @include fontsize(15);
+        }
+
+        #app {
+            width: 100%;
+            height: 400px;
+            margin: 50px auto 0;
+            background: no-repeat center center url(/photo-200731.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .input {
+            margin: 25px 0 40px;
+            #chat-input {
+                width: 250px;
+            }
+        }
+
+        .posts-index-item {
+            margin: 32px 0;
+            .chat-top {
+                display: flex;
+                justify-content: center;
+                .fa-comment {
+                    margin: 0 20px 0 0;
+                    @include fontsize(20);
+                    color: $black;
+                    text-shadow: none;
+                }
+            }
+
+            .chat-comment {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+            }
+
+            .delete-btn {
+                margin: 0 0 0 160px;
+            }
+        } // .chat-wrapper
+
+        .photo {
+            margin: auto;
+            border-radius: 3px;
+        } // .photo
+
+        .name {
+            @include fontsize(28);
+        }
+
+        .sns-icon {
+            padding: 20px;
+            @include fontsize(28);
+            display: flex;
+            justify-content: center;
+            .facebook,
+            .twitter {
+                padding: 0 20px;
+                transition: 0.8s;
+                text-shadow: none;
+                &:hover {
+                    transform: scale(1.2);
+                    transition-duration: 0.3s;
+                }
+            }
+            .facebook {
+                color: $facebook;
+            }
+            .twitter {
+                color: $twitter;
+            }
+        } // .icon
+
+        .skill-icon {
+            @include fontsize(20);
+            color: $black;
+            text-shadow: none;
+        }
+
+        .col-md-4 {
+            padding: 30px 0;
+        }
+
+        .thumbnail {
+            display: flex;
+            justify-content: center;
+            img {
+                width: 243px;
+                height: 150px;
+                margin: 20px 0 40px;
+                object-fit: cover;
+                object-position: 100% 0%;
+            }
+        } //.thumbnail
+
+        #app-2,
+        #app-3,
+        #app-4,
+        #app-5,
+        #app-6,
+        #app-7 {
+            display: flex;
+            justify-content: center;
+            .modal-header {
+                border-bottom: 1px solid #ddd;
+            }
+
+            .modal-header,
+            .modal-body {
+                padding: 5px 25px;
+            }
+
+            .modal-btn {
+                display: flex;
+                margin: 0 auto;
+                button {
+                    margin: 10px auto;
+                }
+            }
+        } // #app-
+
+        .contact {
+            @include sp {
+                width: 100%;
+                padding: 0 20px;
+            }
+            @include pc {
+                width: 440px;
+            }
+            p {
+                margin: 0 0 40px;
+            }
+            input,
+            textarea {
+                width: 100%;
+                margin: 0 auto 20px;
+                display: block;
+                font-size: 12px;
+                padding: 12px 12px;
+                border: 1px solid #d0d5d8;
+                border-radius: 0.25rem;
+                background: $white;
+                @include pc {
+                    width: 400px;
+                }
+            } // input
+            textarea {
+                height: 100px;
+            } // input
+            .contact-btn {
+                display: flex;
+                justify-content: center;
+                .btn {
+                    width: 100%;
+                    margin: 0 auto 20px;
+                    color: $black;
+                    @include fontsize(20);
+                    box-shadow: 1px 1px 20px $white;
+                    border: 1px solid #d0d5d8;
+                    @include pc {
+                        width: 400px;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        transform: scale(1.05);
+                        transition-duration: 0.3s;
+                    } // &:hover
+                } // .btn
+            } //.contact-btn
+        } // .contact
+    } //main
+    /* //main ==================== */
+
+    /* footer ==================== */
+    footer {
+        width: 100%;
+        margin: 50px 0 100px;
+        display: flex;
+        justify-content: center;
+    } // footer
+    /* //footer ==================== */
+} // body
+/* //body ==================== */

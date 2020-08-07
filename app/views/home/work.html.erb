@@ -1,0 +1,229 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 center">
+        <h2 class="page-title">Work</h2>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="center">模写ポートフォリオ</h2>
+        <div class="thumbnail">
+          <img src="/portfolio.png" alt="">
+        </div>
+        <div id="app-2">
+          <button v-on:click="show" class="button btn btn-secondary btn-lg">MORE</button>
+          <modal name="app-2" width="50%" height="auto" :draggable="true" :resizable="true" :scrollable="true">
+            <div class="modal-header">
+              <h2>模写ポートフォリオ</h2>
+            </div>
+            <div class="modal-body">
+              <p>オンラインスクールでの課題ポートフォリオです</p>
+              <img src="/portfolio.png" alt="">
+              <div class="modal-btn">
+                <button v-on:click="hide" class="btn btn-secondary btn-lg">CLOSE</button>
+              </div>
+            </div>
+          </modal>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="center">模写サイト</h2>
+        <div class="thumbnail">
+          <img src="/screenshot.png" alt="">
+        </div>
+        <div id="app-3">
+          <button v-on:click="show" class="button btn btn-secondary btn-lg">MORE</button>
+          <modal name="app-3" width="50%" height="auto" :draggable="true" :resizable="true" :scrollable="true">
+            <div class="modal-header">
+              <h2>模写サイト</h2>
+            </div>
+            <div class="modal-body">
+              <p>オンラインスクールでの課題模写サイトです</p>
+              <img src="/screenshot.png" alt="">
+              <div class="modal-btn">
+                <button v-on:click="hide" class="btn btn-secondary btn-lg">CLOSE</button>
+              </div>
+            </div>
+          </modal>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="center">模写サイト</h2>
+        <div class="thumbnail">
+          <img src="/top_pc.jpg" alt="">
+        </div>
+        <div id="app-4">
+          <button v-on:click="show" class="button btn btn-secondary btn-lg">MORE</button>
+          <modal name="app-4" width="50%" height="auto" :draggable="true" :resizable="true" :scrollable="true">
+            <div class="modal-header">
+              <h2>模写サイト</h2>
+            </div>
+            <div class="modal-body">
+              <p>オンラインスクールでの課題模写サイトです</p>
+              <img src="/top_pc.jpg" alt="">
+              <div class="modal-btn">
+                <button v-on:click="hide" class="btn btn-secondary btn-lg">CLOSE</button>
+              </div>
+            </div>
+          </modal>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="center">模写サイト</h2>
+        <div class="thumbnail">
+          <img src="/PC.png" alt="">
+        </div>
+        <div id="app-5">
+          <button v-on:click="show" class="button btn btn-secondary btn-lg">MORE</button>
+          <modal name="app-5" width="50%" height="auto" :draggable="true" :resizable="true" :scrollable="true">
+            <div class="modal-header">
+              <h2>模写サイト</h2>
+            </div>
+            <div class="modal-body">
+              <p>Webサイトでの課題模写サイトです</p>
+              <img src="/PC.png" alt="">
+              <div class="modal-btn">
+                <button v-on:click="hide" class="btn btn-secondary btn-lg">CLOSE</button>
+              </div>
+            </div>
+          </modal>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="center">模写サイト</h2>
+        <div class="thumbnail">
+          <img src="/TOP.png" alt="">
+        </div>
+        <div id="app-6">
+          <button v-on:click="show" class="button btn btn-secondary btn-lg">MORE</button>
+          <modal name="app-6" width="50%" height="auto" :draggable="true" :resizable="true" :scrollable="true">
+            <div class="modal-header">
+              <h2>Modal title</h2>
+            </div>
+            <div class="modal-body">
+              <p>Webサイトでの課題模写サイトです</p>
+              <img src="/TOP.png" alt="">
+              <div class="modal-btn">
+                <button v-on:click="hide" class="btn btn-secondary btn-lg">CLOSE</button>
+              </div>
+            </div>
+          </modal>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <h2 class="center">・・・</h2>
+        <div class="thumbnail">
+          <img src="/a.png" alt="">
+        </div>
+        <div id="app-7">
+          <button v-on:click="show" class="button btn btn-secondary btn-lg">MORE</button>
+          <modal name="app-7" width="50%" height="auto" :draggable="true" :resizable="true" :scrollable="true">
+            <div class="modal-header">
+              <h2>Modal title</h2>
+            </div>
+            <div class="modal-body">
+              <p>you're reading this text in a modal!</p>
+              <img src="/a.png" alt="">
+              <div class="modal-btn">
+                <button v-on:click="hide" class="btn btn-secondary btn-lg">CLOSE</button>
+              </div>
+            </div>
+          </modal>
+        </div>
+      </div>
+
+    </div><!-- //row -->
+  </div><!-- //container -->
+</main>
+
+
+<script>
+  Vue.use(window["vue-js-modal"].default);
+
+  var app = new Vue({
+    el: '#app-2',
+    methods: {
+      show: function() {
+        this.$modal.show('app-2');
+      },
+      hide: function() {
+        this.$modal.hide('app-2');
+      },
+    }
+  })
+</script>
+
+<script>
+  var app = new Vue({
+    el: '#app-3',
+    methods: {
+      show: function() {
+        this.$modal.show('app-3');
+      },
+      hide: function() {
+        this.$modal.hide('app-3');
+      },
+    }
+  })
+</script>
+
+<script>
+  var app = new Vue({
+    el: '#app-4',
+    methods: {
+      show: function() {
+        this.$modal.show('app-4');
+      },
+      hide: function() {
+        this.$modal.hide('app-4');
+      },
+    }
+  })
+</script>
+
+<script>
+  var app = new Vue({
+    el: '#app-5',
+    methods: {
+      show: function() {
+        this.$modal.show('app-5');
+      },
+      hide: function() {
+        this.$modal.hide('app-5');
+      },
+    }
+  })
+</script>
+
+<script>
+  var app = new Vue({
+    el: '#app-6',
+    methods: {
+      show: function() {
+        this.$modal.show('app-6');
+      },
+      hide: function() {
+        this.$modal.hide('app-6');
+      },
+    }
+  })
+</script>
+
+<script>
+  var app = new Vue({
+    el: '#app-7',
+    methods: {
+      show: function() {
+        this.$modal.show('app-7');
+      },
+      hide: function() {
+        this.$modal.hide('app-7');
+      },
+    }
+  })
+</script>

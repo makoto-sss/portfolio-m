@@ -1,0 +1,16 @@
+<% message = Message.find_by(id: message.id)%>
+
+<div class="posts-index-item" id="<%= message.id %>">
+
+  <div class="chat-top" id="<%= message.id %>">
+    <i class="fas fa-comment img-fluid fa-fw"></i>
+    <p><%=link_to(simple_format(message.updated_at.strftime("%Y-%m-%d %H:%M")), "/posts/#{message.id}")%></p>
+  </div><!-- //. -->
+
+  <div class="chat-comment" id="<%= message.id %>">
+    <p><%=link_to(simple_format(message.content), "/posts/#{message.id}")%></P>
+  </div><!-- //. -->
+
+    <button id="<%= message.id %>" class="delete-btn btn btn-outline-secondary btn-sm">削除</button>
+
+</div><!-- //.posts-index-item -->
