@@ -9,7 +9,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
   },
 
   received: function (message) {
-    var messages = document.getElementById('messages')
+    const messages = document.getElementById('messages')
     messages.innerHTML += message
     // Called when there's incoming data on the websocket for this channel
   },
@@ -21,10 +21,10 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
   });
 
 document.addEventListener('DOMContentLoaded', function () {
-  var input = document.getElementById('chat-input')
-  var button = document.getElementById('button')
+  const input = document.getElementById('chat-input')
+  const button = document.getElementById('button')
   button.addEventListener('click', function () {
-    var content = input.value
+    const content = input.value
     App.room.speak(content)
     input.value = ''
   })
