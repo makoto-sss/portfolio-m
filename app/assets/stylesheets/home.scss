@@ -98,11 +98,11 @@ body {
 
     /* header ==================== */
     header {
-        background: $white;
         .navbar {
             padding: 0;
             z-index: 0;
             .container {
+                background: $white;
                 padding: 30px 15px 25px;
                 width: 100%;
                 position: relative;
