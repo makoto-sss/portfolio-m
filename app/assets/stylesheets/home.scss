@@ -98,6 +98,7 @@ body {
 
     /* header ==================== */
     header {
+        background: $white;
         .navbar {
             padding: 0;
             z-index: 0;
@@ -201,6 +202,7 @@ body {
 
     /* main ==================== */
     main {
+        background: $white;
         .page-title {
             margin: 55px 0;
             font-size: 30px;
@@ -393,6 +395,7 @@ body {
 
     /* footer ==================== */
     footer {
+        background: $white;
         width: 100%;
         margin: 50px 0 100px;
         display: flex;
