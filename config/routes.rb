@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
 
   get "/" => "home#top"
+  get "calc" => "home#calc"
   get "profile" => "home#profile"
   get "work" => "home#work"
   get "contact" => "home#contact"
